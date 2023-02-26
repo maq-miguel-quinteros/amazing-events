@@ -1,4 +1,10 @@
 function generarTarjeta(event) {
+    let buyNow = "";
+    let assistance = "hidden";
+    if (event.date < data.currentDate){
+        buyNow = "hidden";
+        assistance = "";
+    }
     return `
     <div class="card" style="width: 18rem;">
         <div class="d-flex justify-content-between align-items-center p-1">
@@ -10,8 +16,11 @@ function generarTarjeta(event) {
             <p class="card-text">${event.description}</p>
             <div class="d-flex justify-content-between align-items-center">
                 <span>Price: ${event.price}</span>
-                <a href="#" class="btn btn-primary buy-now">Buy Now</a>
+                <a href="#" ${buyNow} class="btn btn-primary buy-now">Buy Now</a><span ${assistance}>Assistance: ${event.assistance}</span>
             </div>
+            <div class="d-flex justify-content-between align-items-center">
+            <span>Capacity: ${event.capacity}</span>
+        </div>
         </div>
     </div>
     `

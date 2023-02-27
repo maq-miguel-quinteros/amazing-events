@@ -1,7 +1,7 @@
 function generarTarjeta(event) {
     let buyNow = "";
     let assistance = "hidden";
-    if (event.date < data.currentDate){
+    if (event.date < data.currentDate) {
         buyNow = "hidden";
         assistance = "";
     }
@@ -10,7 +10,10 @@ function generarTarjeta(event) {
         <div class="d-flex justify-content-between align-items-center p-1">
             <span class="event-date">${event.date}</span><span>${event.place}</span>
         </div>
-        <img src="${event.image}" class="card-img-top" alt="${event.name}">
+        <figure class="p-1">
+            <img src="${event.image}" class="card-img-top" alt="${event.name}">
+            <figcaption>${event.category}</figcaption>
+        </figure>        
         <div class="card-body">        
             <h5 class="card-title">${event.name}</h5>
             <p class="card-text">${event.description}</p>

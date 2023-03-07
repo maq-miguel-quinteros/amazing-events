@@ -28,3 +28,14 @@ function generarTarjeta(event) {
     </div>
     `
 }
+
+function generarCategoria(categoria){
+    return `
+    <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="${categoria}" id="${categoria}">
+            <label class="form-check-label" for="${categoria}">
+                ${categoria}
+            </label>
+        </div>
+    `
+}

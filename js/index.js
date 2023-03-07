@@ -61,6 +61,6 @@ buscar.addEventListener("keypress", ev => {
 });
 
 let btnBuscar = document.getElementById("buttonBuscar");
-btnBuscar.addEventListener("click", ev => {
+btnBuscar.addEventListener("click", () => {
     buscador(buscar.value);
 });

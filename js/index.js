@@ -15,6 +15,7 @@ document.getElementById("paraCategoria").innerHTML = showCategory;
 // MUESTRA LAS TARJETAS
 let selectCategorias = [];
 let events = data.events;
+
 function mostrarTarjetas(selectCategorias, events) {
     let showCards = "";
     if (selectCategorias == ""){
@@ -45,22 +46,43 @@ for (let categoria of categorias) {
 }
 
 // BUSCADOR
-
-function buscador(valor){
-    console.log(valor);
+function buscador(texto){
+    console.log(texto);
+    let textoLow = texto.toLowerCase();
+    console.log(textoLow);
+    events = [];
+    for (let event of data.events){
+        if (event.name.toLowerCase().includes(textoLow)){
+            events.push(event);
+        }else {
+            if (event.description.toLowerCase().includes(textoLow)){
+                events.push(event);
+            }else {
+                if (event.place.toLowerCase().includes(textoLow)){
+                    events.push(event);
+                }
+            }
+        }
+    }
+    if (events == ""){
+        events = data.events;
+    }
+    mostrarTarjetas(selectCategorias, events);
 }
 
 
+// EVENTOS DEL BUSCADOR
 let buscar = document.getElementById("textBuscar");
 
 buscar.addEventListener("keypress", ev => {
     if (ev.key === "Enter") {
-        // ev.preventDefault();
+        ev.preventDefault();
         buscador(buscar.value);
     }
 });
 
 let btnBuscar = document.getElementById("buttonBuscar");
-btnBuscar.addEventListener("click", () => {
+btnBuscar.addEventListener("click", ev => {
+    ev.preventDefault();
     buscador(buscar.value);
 });

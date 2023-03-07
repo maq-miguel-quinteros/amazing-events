@@ -12,6 +12,9 @@ for (let categoria of categorias){
 }
 document.getElementById("paraCategoria").innerHTML = showCategory;
 
+for (let categoria of categorias){
+    document.getElementById(categoria).addEventListener("click", ()=> console.log(categoria))
+}
 
 // MUESTRA LAS TARJETAS 
 let showCards = "";

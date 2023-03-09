@@ -1,3 +1,7 @@
+// VARIABLES GLOBALES
+let selectCategorias = [];
+let events = data.events;
+
 // MUESTRA LAS CATEGORIAS
 let categorias = data.events.reduce((acc, event) => {
     if (!acc.includes(event.category)) {
@@ -13,9 +17,6 @@ for (let categoria of categorias) {
 document.getElementById("paraCategoria").innerHTML = showCategory;
 
 // MUESTRA LAS TARJETAS
-let selectCategorias = [];
-let events = data.events;
-
 function mostrarTarjetas(selectCategorias, events) {
     let showCards = "";
     if (selectCategorias == ""){
@@ -47,7 +48,6 @@ for (let categoria of categorias) {
 
 // BUSCADOR
 function buscador(texto){
-    console.log(texto);
     let textoLow = texto.toLowerCase();
     console.log(textoLow);
     events = [];
@@ -57,10 +57,6 @@ function buscador(texto){
         }else {
             if (event.description.toLowerCase().includes(textoLow)){
                 events.push(event);
-            }else {
-                if (event.place.toLowerCase().includes(textoLow)){
-                    events.push(event);
-                }
             }
         }
     }

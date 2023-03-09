@@ -34,7 +34,7 @@ function mostrarTarjetas(selectCategorias, events) {
 }
 mostrarTarjetas(selectCategorias, events);
 
-// SELECCION DE CATEGORIAS
+// SELECCIÓN DE CATEGORÍAS
 for (let categoria of categorias) {
     document.getElementById(categoria).addEventListener("click", () => {
         if (!selectCategorias.includes(categoria)) {

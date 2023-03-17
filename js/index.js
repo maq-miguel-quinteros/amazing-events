@@ -1,3 +1,4 @@
+/*
 // VARIABLES GLOBALES
 let selectCategorias = [];
 let events = data.events;
@@ -14,8 +15,9 @@ let showCategory = "";
 for (let categoria of categorias) {
     showCategory += generarCategoria(categoria);
 }
-document.getElementById("paraCategoria").innerHTML = showCategory;
+document.getElementById("paraCategoria").innerHTML = showCategory; */
 
+/*
 // MUESTRA LAS TARJETAS
 function mostrarTarjetas(selectCategorias, events) {
     let showCards = "";
@@ -34,6 +36,7 @@ function mostrarTarjetas(selectCategorias, events) {
 }
 mostrarTarjetas(selectCategorias, events);
 
+/* 
 // SELECCIÓN DE CATEGORÍAS
 for (let categoria of categorias) {
     document.getElementById(categoria).addEventListener("click", () => {
@@ -82,3 +85,4 @@ btnBuscar.addEventListener("click", ev => {
     ev.preventDefault();
     buscador(buscar.value);
 });
+*/

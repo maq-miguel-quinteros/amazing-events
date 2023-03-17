@@ -67,6 +67,17 @@ function generarDetalle(event, data) {
     `
 }
 
+function generarEstadisticasAsistencia(event, porcentaje) {
+    return `
+    ${event.name}: ${porcentaje}%<br>${event.assistance} out of ${event.capacity}
+    `;
+}
+
+function generarEstadisticasCapacidad(event){
+    return `
+    ${event.name}<br>Capacity: ${event.capacity}
+    `
+}
 
 /* TRAE LOS DATOS DE LA API */
 const cargarDatos = async () => {

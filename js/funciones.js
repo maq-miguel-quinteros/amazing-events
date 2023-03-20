@@ -79,6 +79,16 @@ function generarEstadisticasCapacidad(event){
     `
 }
 
+function generarTabla(categoria, revenues, porcentaje){
+    return `
+    <tr>    
+    <td>${categoria}</td>
+    <td>${revenues}</td>
+    <td>${porcentaje}%</td>
+    </tr>
+    `
+}
+
 /* TRAE LOS DATOS DE LA API */
 const cargarDatos = async () => {
     try {
